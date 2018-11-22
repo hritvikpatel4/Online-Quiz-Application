@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test-SignUp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="font.css">
+		<link rel="stylesheet" type="text/css" href="signup.css">
+	</head>
+	<body id="body">
+		<div id="title" align="center">SIGN&nbsp;UP</div>
+		<hr style="border: 2px solid black;">
+		<div id="signup">
+			<form  align="center" name="myForm" action="sign_in_up.php" onsubmit="return validateForm()" method="POST">
+				<label class="ah" for="name"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name</b></label><br/>
+				<input class="input" type="text" name="name" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Your Name"/><div id="1"></div><br/><br/>
+				
+				<label class="ah" for="SRN"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Srn</b></label><br/>
+				<input class="input" type="text" name="SRN" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Your Srn"/><div id="2"></div><br/><br/>
+				
+				<label class="ah" for="password"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password</b></label><br/>
+				<input class="input" type="password" name="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Password"/><br/><br/>
+				
+				<label class="ah" for="confirmpassword"><b>Retype Password</b></label><br/>
+				<input class="input" type="password" name="confirmpassword" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Confirm Password"/><div id="3"></div><br/><br/>
+				
+				<input type="checkbox" id="check" name="terms" style="margin-bottom:15px"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Agree to</i> <a href="termsofservice.html" target="_blank"><i>Terms and conditions</i></a><div id="4"></div><br/>
+				<input id="submit" type="submit" name="submit" value="Sign Up"/>
+				<input name="action" type="hidden" value="signup"/></p>
+			</form>
+		</div>
+		<script type="text/javascript">
+			function validateForm() 
+			{
+				var a = document.forms["myForm"]["name"].value;
+				var b = document.forms["myForm"]["SRN"].value;
+				var p1 = document.forms["myForm"]["password"].value;
+				var p2 = document.forms["myForm"]["confirmpassword"].value;
+				var checkBox = document.getElementById("check");
+				var x = document.getElementById("1");
+				var y = document.getElementById("2");
+				var z = document.getElementById("3");
+				var w = document.getElementById("4");
+				if (a == "") 
+				{
+					x.innerHTML="*Enter Name";
+					x.style.color="red";
+					return false;
+				}
+				else if(b == "")
+				{
+					y.innerHTML="*Enter Srn";
+					y.style.color="red";
+					return false;
+				}
+				else if(p1!=p2)
+				{
+					z.innerHTML="*Passwords do not match";
+					z.style.color="red";
+					return false;
+				}
+				else if(p1=="")
+				{
+					z.innerHTML="*Enter password";
+					z.style.color="red";
+					return false;
+				}
+				else if(p2=="")
+				{
+					z.innerHTML="*Enter password";
+					z.style.color="red";
+					return false;
+				}
+				else if(checkBox.checked==false)
+				{
+					w.innerHTML="Please agree to the Terms and Conditions";
+					w.style.color="red";
+					return false;
+				}
+				else
+					return true;
+			}
+		</script>
+	</body>
+</html>

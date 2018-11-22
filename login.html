@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test-Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="font.css">
+		<link rel="stylesheet" type="text/css" href="login.css">
+	</head>
+	<body onload="myFunction()">
+		<div id="loader"></div>
+		<div style="display:none;" id="myDiv" class="animate-bottom">
+			<div class="navbar">
+				<a href="login.html">Home</a>
+				<a href="suggestions.html">Suggestions</a>
+				<a href="faqs.html">FAQs</a>
+			</div>
+			<form name="login" id="form1" action="sign_in_up.php" method="POST">
+				<div id="input">
+					<input id="name" type="text" name="SRN" maxlength="20"  placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USERNAME" autofocus="on" required><br><br>
+					<input id="pass" type="password" name="PASSWORD" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PASSWORD"  autocomplete="on" required><br>
+				</div>
+				<input name="action" type="hidden" value="login" /></p>
+				<div id="submit">
+					<input id="button" onclick="valid()" type="submit" name="SUBMIT" value="&nbsp;LOGIN&nbsp;"><br/><br/>
+					<button id="signup" onclick="link()">SIGN UP</button>
+					<div id="mes"></div>
+				</div>
+			</form>
+		</div>
+		<script>
+			var myVar;
+			function myFunction() {
+				myVar = setTimeout(showPage, 1500);
+			}
+			function showPage() {
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("myDiv").style.display = "block";
+			}
+			function valid(event)
+			{
+				if(document.getElementById("name").value=="")
+					document.getElementById("mes").innerHTML = "Enter valid Username";
+				else if( document.getElementById("pass").value == "")
+					document.getElementById("mes").innerHTML = "Enter Password";
+			}
+			function link()
+			{
+				location.href='signup.html';
+			}
+		</script>
+	</body>
+</html>

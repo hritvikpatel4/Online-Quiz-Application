@@ -1,0 +1,124 @@
+p.question_num {
+    border: 3px;
+    border-style: outset;
+    font-size: 20px;
+}
+        
+p.question_text {    
+    display: block;
+    font-size: 24px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 10;
+    margin-right: 10;
+}
+
+button {
+    background-color: #06af46;
+    color: white;
+    font-size: 25px;
+}
+
+.vertical {
+    border-left: 4px solid black;
+    height: 53%;
+    position: absolute;
+    left: 76%;
+    margin-left: 30px;
+    top: 50px;
+}
+
+.radios {
+    margin: 12px;
+}
+
+#o1,#o2,#o3,#o4 {
+    font-size: 18px;
+}
+
+#t {
+    position: absolute;
+    left: 73%;
+    top: -0.5%;
+    font-size: 24px;
+}
+
+#bt1 {
+    position: absolute;
+    left: 4%;
+
+}
+
+#bt2 {
+    position: absolute;
+    left: 69%;
+}
+
+#bt4 {
+    position: absolute;
+    left: 86%;
+}
+
+.but {
+    border-radius: 25px;
+}
+
+#b1 {
+    position: absolute;
+    left: 80%;
+    top: 13%;
+}
+
+#b2 {
+    position: absolute;
+    left: 85%;
+    top: 13%;
+}
+
+#b3 {
+    position: absolute;
+    left: 90%;
+    top: 13%;
+}
+
+#b4 {
+    position: absolute;
+    left: 95%;
+    top: 13%;
+}
+
+#b5 {
+    position: absolute;
+    left: 80%;
+    top: 23%;
+}
+
+#b6 {
+    position: absolute;
+    left: 85%;
+    top: 23%;
+}
+
+#b7 {
+    position: absolute;
+    left: 90%;
+    top: 23%;
+}
+
+#b8 {
+    position: absolute;
+    left: 95%;
+    top: 23%;
+}
+
+#b9 {
+    position: absolute;
+    left: 80%;
+    top: 33%;
+}
+
+#b10 {
+    position: absolute;
+    left: 85%;
+    top: 33%;
+}

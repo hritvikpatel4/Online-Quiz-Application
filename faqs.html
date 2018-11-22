@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test-FAQs</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="font.css">
+		<link rel="stylesheet" type="text/css" href="faqs.css">
+	</head>
+	<body onload="myFunction()">
+		<div id="loader"></div>
+		<div style="display:none;" id="myDiv" class="animate-bottom">
+		<div class="navbar">
+		<a href="login.html">Home</a>
+		<a href="suggestions.html">Suggestions</a>
+		<a href="faqs.html">FAQs</a>
+		</div><br><br><br>
+		<div class="dropdown">
+			<button onclick="myClick1()" class="dropbtn">How do I create a new account?</button>
+				<div id="myDropdown1" class="dropdown-content">
+					<h4>Click on the sign up option in the home page and fill in your details correctly, and your account will be created.</h4>
+			  	</div><br><br>
+			
+			<button onclick="myClick2()" class="dropbtn">I already have an account? How do I login?</button>
+				<div id="myDropdown2" class="dropdown-content">
+					<h4>In the home page, type in the correct credentials and click on the login button.</h4>
+				</div><br><br>
+			
+			<button onclick="myClick3()" class="dropbtn">How do I submit suggestions to the developer of this webpage?</button>
+				<div id="myDropdown3" class="dropdown-content">
+					<h4>Click on the Suggestions button in the navigation bar on top, and fill in your suggestion in the given textbox.</h4>
+				</div><br><br>
+			
+			<button onclick="myClick4()" class="dropbtn">How do I get the results for my test?</button>
+				<div id="myDropdown4" class="dropdown-content">
+					<h4>After finishing the test, click on the submit button to get your result.</h4>
+				</div><br><br>
+		</div>
+		<script>
+			var myVar;
+			function myFunction() {
+				myVar = setTimeout(showPage, 1500);
+			}
+			function showPage() {
+				document.getElementById("loader").style.display = "none";
+				document.getElementById("myDiv").style.display = "block";
+			}
+			function myClick1() {
+    			document.getElementById("myDropdown1").classList.toggle("show");
+			}
+			function myClick2() {
+    			document.getElementById("myDropdown2").classList.toggle("show");
+			}
+			function myClick3() {
+    			document.getElementById("myDropdown3").classList.toggle("show");
+			}
+			function myClick4() {
+    			document.getElementById("myDropdown4").classList.toggle("show");
+			}
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+				if (!event.target.matches('.dropbtn')) {
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+						var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

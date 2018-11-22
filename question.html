@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="question.css">
+		<link rel="stylesheet" type="text/css" href="font.css">
+		<style type="text/css">
+			#score
+			{
+				color: blue;
+				position: relative;
+				top:50%;
+			}
+		</style>
+		<script>
+			var q_no = ['1','2','3','4','5','6','7','8','9','10'];
+			var question = [
+				"Which of the following is not a list tag?",
+				"Find the odd one out",
+				"How do you write 'Hello World' in an alert box?",
+				"How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
+				"What is the correct way to end a PHP statement?",
+				"What is the correct way to open the file 'time.txt' as readable?",
+				"Which jQuery method is used to hide selected elements?",
+				"The Bootstrap grid system is based on how many columns?",
+				"What does CSS stand for?",
+				"How do you select an element with id 'demo'?"
+			];
+			var options = [
+				"<ul>|<list>|<ol>|<dl>",
+				"<audio>|<video>|<p>|<canvas>",
+				"msg('Hello World');|alert('Hello World');|msgBox('Hello World');|alertBox('Hello World');",
+				"if =! 5 then|if i <> 5|if (i!=5)|if (i<>5)",
+				";|.|:|?",
+				"open('time.txt','read');|fopen('time.txt','r+');|open('time.txt');|fopen('time.txt','r');",
+				"hide();|visible(false);|display(none);|hidden();",
+				"3|12|6|15",
+				"Computer Style Sheets|Cascading Style Sheets|Colorful Style Sheets|Creative Style Sheets",
+				"*demo|#demo|.demo|demo"
+			];
+			var answer_key = [2,3,2,3,1,4,1,2,2,2];
+			var user_answers = ["0","0","0","0","0","0","0","0","0","0"];
+			var i=0;
+			function set(i)
+			{
+				var x=document.getElementById("question_t");
+				var y=document.getElementById("question");
+				var op1=document.getElementById("o1");
+				var op2=document.getElementById("o2");
+				var op3=document.getElementById("o3");
+				var op4=document.getElementById("o4");
+				var ans1=document.getElementById("ans1");
+				var ans2=document.getElementById("ans2");
+				var ans3=document.getElementById("ans3");
+				var ans4=document.getElementById("ans4");
+				ans1.checked =false;
+				ans2.checked =false;
+				ans3.checked =false;
+				ans4.checked =false;
+				y.innerHTML = "&nbsp;&nbsp;"+q_no[i];
+				x.innerHTML = question[i];
+				var s = options[i];
+				var arr = s.split("|");
+				if(parseInt(user_answers[i]))
+					check_option(i);
+				op1.innerText = arr[0];
+				op2.innerText = arr[1];
+				op3.innerText = arr[2];
+				op4.innerText = arr[3];
+			}
+			function check_option(i) 
+			{
+				var ans1=document.getElementById("ans1");
+				var ans2=document.getElementById("ans2");
+				var ans3=document.getElementById("ans3");
+				var ans4=document.getElementById("ans4");
+				var ans = parseInt(user_answers[i]);
+				if(ans == 1)
+					ans1.checked = true;
+				else if(ans == 2)
+					ans2.checked = true;
+				else if(ans == 3)
+					ans3.checked = true;
+				else if(ans == 4)
+					ans4.checked = true;
+				else
+				{
+					ans1.checked = false; ans2.checked = false; ans3.checked = false; ans4.checked = false;
+				}
+			}
+			function load()
+			{
+				set(i);
+			}
+			function calResult()
+			{
+				var q;var j;var result=0;
+				for (q=0; q<10; q++)
+				{
+					if (parseInt(user_answers[q]) == answer_key[q])
+						{
+							result = result + 1;
+						}
+					
+				}
+				alert("you scored "+result);
+				document.write("");
+				//document.body.backgroungImage="pipes.png";
+				document.write("<div style='position:relative;top:1	0%;font-size: 25px'><h1 align='center'>Thank You</h1></div>")
+				document.write("<div style='color:blue;position:absolute;top:40%;left:44%'><h1>"+"You Scored : "+result+"</h1><br/>");
+				document.write("<br/><a href='suggestions.html'  style='position:absolute;left:3%;top:140%;background-color: #06a446;border: solid;border-radius: 5px;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 15px'>Back To Home</a></div>")
+				return result;
+			}
+			function submit()
+			{
+				save();
+				var submit=confirm("Are you sure that you want to submit?");
+				if (submit==true)
+				{
+					var res=calResult();
+				}
+				else
+				{
+					alert("Not submitted");
+				}
+			}
+			function save()
+			{
+				var ans1=document.getElementById("ans1");
+				var ans2=document.getElementById("ans2");
+				var ans3=document.getElementById("ans3");
+				var ans4=document.getElementById("ans4");
+				if (ans1.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"1");
+				else if (ans2.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"2");
+				else if (ans3.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"3");
+				else if (ans4.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"4");
+				i++;
+				if (i >= 10) 
+					i=0;
+				set(i);
+			}
+			function save1()
+			{
+				var ans1=document.getElementById("ans1");
+				var ans2=document.getElementById("ans2");
+				var ans3=document.getElementById("ans3");
+				var ans4=document.getElementById("ans4");
+				if (ans1.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"1");
+				else if (ans2.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"2");
+				else if (ans3.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"3");
+				else if (ans4.checked && parseInt(user_answers[i]) == 0) user_answers.splice(i,1,"4");
+				i--;
+				if (i <= 0) 
+					i=0;
+				set(i);
+			}
+			function timer()
+			{
+				var now = new Date().getTime();
+				var distance = countDownDate - now;
+				document.getElementById("t").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + ":" + Math.floor((distance % (1000 * 60)) / 1000);
+				if (distance < 0) 
+				{
+					clearInterval(x);
+					document.getElementById("t").innerHTML = "Time over!";
+					submit();
+				}
+			}
+			var countDownDate = new Date();
+			countDownDate.setMinutes(countDownDate.getMinutes()+900);
+			var x = setInterval(timer,100);
+		</script>
+	</head>
+	<body id="bd" onload='load()'>
+		<p class="question_num" id="question"></p>
+		<p class="question_text" id="question_t"></p>
+		<p id="t">15:00</p>
+		<div class="vertical"></div>
+		<form  method="POST">
+			
+			<input type="radio" id ="ans1" class="radios" name="answer" value="1">
+			<label id="o1"></label>
+			<br>
+			<input type="radio" id ="ans2" class="radios" name="answer" value="2">
+			<label id="o2"></label>
+			<br>
+			<input type="radio" id ="ans3" class="radios" name="answer" value="3">
+			<label id="o3"></label>
+			<br>
+			<input type="radio" id ="ans4" class="radios" name="answer" value="4">
+			<label id="o4"></label>
+			<br>
+		</form>
+		<button type="button" id="b1" class="but" onclick="set(0)" name="1">&nbsp;1&nbsp;</button>
+		<button type="button" id="b2" class="but" onclick="set(1)" name="2">&nbsp;2&nbsp;</button>
+		<button type="button" id="b3" class="but" onclick="set(2)" name="3">&nbsp;3&nbsp;</button>
+		<button type="button" id="b4" class="but" onclick="set(3)" name="4">&nbsp;4&nbsp;</button>
+		<button type="button" id="b5" class="but" onclick="set(4)" name="5">&nbsp;5&nbsp;</button>
+		<button type="button" id="b6" class="but" onclick="set(5)" name="6">&nbsp;6&nbsp;</button>
+		<button type="button" id="b7" class="but" onclick="set(6)" name="7">&nbsp;7&nbsp;</button>
+		<button type="button" id="b8" class="but" onclick="set(7)" name="8">&nbsp;8&nbsp;</button>
+		<button type="button" id="b9" class="but" onclick="set(8)" name="9">&nbsp;9&nbsp;</button>
+		<button type="button" id="b10" class="but" onclick="set(9)" name="10">10</button>
+		<br><br><br><br><br><br><br>
+		<hr style="border: 2px solid black;">
+		<br>
+		<button type="button" id="bt1" onclick="save1()" name="Prev">Prev</button>
+		<button type="button" id="bt2" onclick="save()" name="Next">Next</button>
+		<button type="button" id="bt4" action="login.html" onclick="submit()" name="Submit">Submit</button>
+		<br><br><br><br><br><br>
+	</body>
+</html>

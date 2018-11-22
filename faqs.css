@@ -1,0 +1,162 @@
+form {
+    position: relative;
+    width: 500px;
+    left:18%;
+    right: 82%;
+    top:200px;
+}
+
+#input {
+    position: relative;
+    left :37%;
+    right: :63%;
+}
+
+#button {
+    position: relative;
+    top: 15px;
+    left :37%;
+    right: :63%;
+    color: black;
+    background-color: grey;
+    border: solid;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-size: 18px;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    left: 0px;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+#loader {
+    position: absolute;
+    left: 54%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid black;
+    border-bottom: 8px solid black;
+    border-left: 8px solid white;
+    border-right: 8px solid white;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 0.5s linear infinite;
+    animation: spin 0.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.5s;
+    animation-name: animatebottom;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 }
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+    from{ bottom:-100px; opacity:0 }
+    to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
+
+.dropbtn {
+    position: relative;
+    background-color: #3498DB;
+    color: white;
+    width: 500px;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    width: 500px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    position: relative;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    position: relative;
+    display: block;
+}
+body
+{
+    background-image: url("pipes.png") ;
+}
